@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { supabase } from '../client'
 import './EditPost.css'
@@ -7,6 +7,30 @@ const EditPost = ({data}) => {
 
     const {id} = useParams()
     const [post, setPost] = useState({id: null, title: "", author: "", description: ""})
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            const { data, error } = await supabase
+                .from('Posts')
+                .select('*')
+                .eq('id', id)
+                .single()
+
+            if (error) {
+                console.error('Error fetching post:', error)
+            } else if (data) {
+                setPost({
+                    id: data.id,
+                    title: data.title || '',
+                    author: data.author || '',
+                    description: data.description || ''
+                })
+            }
+            setLoading(false)
+        }
+        fetchPost()
+    }, [id])
 
     const handleChange = (event) => {
         const {name, value} = event.target
@@ -40,6 +64,8 @@ const EditPost = ({data}) => {
 
         window.location = "/";
     }
+
+    if (loading) return <p>Loading...</p>
 
     return (
         <div>
