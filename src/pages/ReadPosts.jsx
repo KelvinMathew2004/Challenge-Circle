@@ -33,6 +33,7 @@ const ReadPosts = (props) => {
                         title={post.title}
                         author={post.author}
                         description={post.description}
+                        betCount={post.betCount}
                     />
                 ) : <h2>{'No Challenges Yet 😞'}</h2>
             }
