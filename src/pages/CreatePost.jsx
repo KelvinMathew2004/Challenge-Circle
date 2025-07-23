@@ -31,15 +31,15 @@ const CreatePost = () => {
         <div>
             <form>
                 <label htmlFor="title">Title</label> <br />
-                <input type="text" id="title" name="title" onChange={handleChange} /><br />
+                <input type="text" id="title" value={post.title} name="title" onChange={handleChange} /><br />
                 <br/>
 
                 <label htmlFor="author">Author</label><br />
-                <input type="text" id="author" name="author" onChange={handleChange} /><br />
+                <input type="text" id="author" value={post.author} name="author" onChange={handleChange} /><br />
                 <br/>
 
                 <label htmlFor="description">Description</label><br />
-                <textarea rows="5" cols="50" id="description" name="description" onChange={handleChange}>
+                <textarea rows="5" cols="50" id="description" value={post.description} name="description" onChange={handleChange}>
                 </textarea>
                 <br/>
                 <input type="submit" value="Submit" onClick={createPost} />
