@@ -68,24 +68,26 @@ const EditPost = ({data}) => {
     if (loading) return <p>Loading...</p>
 
     return (
-        <div>
-            <form>
-                <label htmlFor="title">Title</label> <br />
-                <input type="text" id="title" name="title" value={post.title} onChange={handleChange} /><br />
-                <br/>
+            <form className='edit-form-container'>
+                <div className='form-group'>
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-input" value={post.title} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="author">Author</label><br />
-                <input type="text" id="author" name="author" value={post.author} onChange={handleChange} /><br />
-                <br/>
+                <div className='form-group'>
+                    <label htmlFor="author">Author</label>
+                    <input type="text" id="author" name="author" class="form-input" value={post.author} onChange={handleChange} />
+                </div>
 
-                <label htmlFor="description">Description</label><br />
-                <textarea rows="5" cols="50" id="description" name="description" value={post.description} onChange={handleChange} >
-                </textarea>
-                <br/>
-                <input type="submit" value="Submit" onClick={updatePost}/>
+                <div className='form-group'>
+                    <label htmlFor="description">Description</label>
+                    <textarea rows="5" cols="50" id="description" class="form-input" name="description" value={post.description} onChange={handleChange} >
+                    </textarea>
+                </div>
+
+                <button type="submit" className="submit-btn" onClick={updatePost}>Submit</button>
                 <button className="deleteButton" onClick={deletePost}>Delete</button>
             </form>
-        </div>
     )
 }
 

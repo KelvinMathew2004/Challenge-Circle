@@ -1,58 +1,100 @@
+@import url('https://fonts.google.com/specimen/Poppins?query=poppins');
+
+body {
+    background: #111827;
+    background-image: radial-gradient(at 47% 33%, hsl(205.00, 77%, 25%) 0, transparent 59%), 
+                      radial-gradient(at 82% 65%, hsl(218.00, 39%, 25%) 0, transparent 55%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .Card {
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(153, 153, 153, 0.497);
-    border-radius: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 10px;
-    margin-bottom: 25px;
-    width: 400px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 400px;
+  padding: 25px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(31, 41, 55, 0.5);
+  color: white;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.Card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.5);
 }
 
 .title {
-    color:white;
-    padding-left:30px;
+    color: #F9FAFB;
     font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .author {
-    color:white;
+    color: #9CA3AF;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.author::before {
+    content: 'by ';
+    color: #6B7280;
 }
 
 .description {
-    color:white;  
-    text-align: justify;
-    text-justify: inter-word;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 20px;
+    color: #E5E7EB;
+    text-align: left;
+    margin-bottom: 30px;
     font-size: 15px;
+    line-height: 1.6;
 }
 
 .betButton {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 15px;
-    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 16px;
+    font-weight: 600;
     font-family: inherit;
-    background-color: #1a1a1a;
-    color:white;
+    background: linear-gradient(90deg, #5D5FEF, #646CFF);
+    color: white;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(93, 95, 239, 0.4);
 }
+
 .betButton:hover {
-    border-color: #646cff;
-  }
+    transform: scale(1.05); 
+    box-shadow: 0 6px 20px rgba(93, 95, 239, 0.6);
+}
 
 .moreButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     width: 30px;
-    float:right;
-
-}
-.moreButton:hover {
+    height: 30px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    color: #E5E7EB; 
+    font-size: 20px;
+    line-height: 0;
+}
+
+.moreButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
