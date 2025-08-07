@@ -12,13 +12,10 @@ This application serves as a hub for users to create, view, update, and delete c
 
 ## ✨ Features
 
-### Required Features
 - 📖 **View All Challenges:** The homepage displays a feed of all user-submitted challenges.
 - ➕ **Create a Challenge:** A dedicated form allows users to easily post new challenges to the forum.
 - 🔄 **Update a Challenge:** Users have the ability to edit the details of a challenge after it has been created.
 - 🗑️ **Delete a Challenge:** A challenge can be removed from the forum once it's posted.
-
-### Stretch Features
 - ⬆️ **Track Bets:** The site keeps a running tally of "bets" for each challenge. When a user clicks the **"Bet"** button, the count is incremented and saved to the Supabase database, showing how many people have taken on the challenge.
 
 ---
@@ -55,7 +52,7 @@ All client-side routing is handled by **React Router**.
 
 ## 📄 License
 
-    Copyright [2025] [Your Name]
+    Copyright [2025] [Kelvin Mathew]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
